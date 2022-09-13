@@ -1,2 +1,0 @@
-# travelholicFYP
- FYP Project

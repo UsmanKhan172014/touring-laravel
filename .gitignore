@@ -21,6 +21,8 @@ _build/
 Build
 Build.bat
 
+*.zip
+
 # Module::Install
 inc/
 
