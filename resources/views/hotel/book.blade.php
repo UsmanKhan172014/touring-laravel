@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.frontend')
 @section('nav','fixed-top')
 @section('content')
 @include('inc.message_popup')

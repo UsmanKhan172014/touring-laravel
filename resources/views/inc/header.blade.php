@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark @yield('nav')">
-    <a class="navbar-brand" href="{{route('home')}}"><img src="{{asset('img/logowhite.png')}}"></a>
+    <a class="navbar-brand" href="{{route('home')}}"><img src="{{asset('img/logo.png')}}"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
         <span class="navbar-toggler-icon"></span>
     </button>

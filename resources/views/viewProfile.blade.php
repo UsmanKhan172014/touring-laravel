@@ -1,5 +1,5 @@
-@extends('layouts.app')
-@section('nav','fixed-top')
+@extends('layouts.frontend')
+
 @section('content')
 
 <div class="container" style="margin-top: 10rem; background-color: lightgrey; height: 700px; border-radius: 20px; color: #40474e">

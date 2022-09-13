@@ -30,7 +30,12 @@
                 <div class="col-6">
                     <ul id="top_links">
                         {{-- <li><a href="{{ url("/login") }}" id="access_link">Sign in</a></li>> --}}
+                        @guest
                         <li><a href="{{ url("/login") }}" >Sign in</a></li>>
+                        @endguest
+                        @auth
+                            <li><a href="{{ route('dashboard') }}" >Dashboard</a></li>>
+                        @endauth
 
                     </ul>
                 </div>
@@ -42,7 +47,7 @@
         <div class="row">
             <div class="col-3">
                 <div id="logo_home">
-                    <h1><a href="index.html" title="TRAVELHOLIC.pk">TRAVELHOLIC</a></h1>
+                    <h1><a href="{{ route('home') }}" title="TRAVELHOLIC.pk">TRAVELHOLIC</a></h1>
                 </div>
             </div>
             <nav class="col-9">

@@ -96,7 +96,7 @@
 
 
                                                 </div>
-                                                
+
                                                 <a target="_blank" class="btn btn-outline-primary"
                                                    onclick="document.getElementById('book-{{$tour->slug}}').submit();">
                                                     Book

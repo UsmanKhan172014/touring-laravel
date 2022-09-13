@@ -167,8 +167,9 @@
 
                 <div class="col-lg-9">
                     <div class="box_style_1">
+                        @foreach($blogs as $blog)
                         <div class="post">
-                            <a href="blog_post.html" title="blog_post.html"><img src="img/slide_hero.jpg" alt="Image" class="img-fluid">
+                            <a href="blog_post.html" title="{{ $blog->slug }}"><img src="{{asset('storage/'.$blog->user->username.'/blog/'.$blog->thumbnail)}}" alt="Image" class="img-fluid">
                             </a>
                             <div class="post_info clearfix clearfix1">
                                 <div class="post-left">
@@ -197,61 +198,8 @@
                         <!-- end post -->
 
                         <hr>
+                        @endforeach
 
-                        <div class="post">
-                            <a href="blog_post.html" title="blog_post.html"><img src="img/slide_hero.jpg" alt="Image" class="img-fluid">
-                            </a>
-                            <div class="post_info clearfix clearfix1">
-                                <div class="post-left">
-                                    <ul>
-                                        <li><i class="icon-calendar-empty"></i> On <span>12 Nov 2020</span>
-                                        </li>
-                                        <li><i class="icon-inbox-alt"></i> In <a href="#">Top tours</a>
-                                        </li>
-                                        <li><i class="icon-tags"></i> Tags <a href="#">Works</a>, <a href="#">Personal</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="post-right"><i class="icon-comment"></i><a href="#">25 </a>Comments</div>
-                            </div>
-                            <h2>Duis aute irure dolor in reprehenderit</h2>
-                            <p>
-                                Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi nascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi nunc odio, gravida at, cursus nec, luctus a, lorem.....
-                            </p>
-                            <a href="blog_post.html" class=" btn_1">Read more</a>
-                        </div>
-                        <!-- end post -->
-
-                        <hr>
-
-                        <div class="post">
-                            <a href="blog_post.html" title="blog_post.html"><img src="img/slide_hero.jpg" alt="Image" class="img-fluid">
-                            </a>
-                            <div class="post_info clearfix clearfix1">
-                                <div class="post-left">
-                                    <ul>
-                                        <li><i class="icon-calendar-empty"></i> On <span>12 Nov 2020</span>
-                                        </li>
-                                        <li><i class="icon-inbox-alt"></i> In <a href="#">Top tours</a>
-                                        </li>
-                                        <li><i class="icon-tags"></i> Tags <a href="#">Works</a>, <a href="#">Personal</a>
-                                        </li>
-                                        <li><i class="icon-comment"></i><a href="#">25 </a>Comments
-                                        </li>
-                                    </ul>
-                                </div>
-
-                            </div>
-                            <h2>Duis aute irure dolor in reprehenderit</h2>
-                            <p>
-                                Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi nascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi nunc odio, gravida at, cursus nec, luctus a, lorem.....
-                            </p>
-                            <p>
-                                Ludus albucius adversarium eam eu. Sit eu reque tation aliquip. Quo no dolorum albucius lucilius, hinc eligendi ut sed. Ex nam quot ferri suscipit, mea ne legere alterum repudiandae. Ei pri quaerendum intellegebat, ut vel consequuntur voluptatibus. Et volumus sententiae adversarium duo......
-                            </p>
-                            <a href="blog_post.html" class="btn_1" title="blog_post.html">Read more</a>
-                        </div>
-                        <!-- end post -->
                     </div>
                     <!-- end box style -->
                     <hr>
