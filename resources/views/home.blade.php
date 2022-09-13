@@ -4,7 +4,7 @@
     <section id="search_container">
         <div id="search">
             <ul class="nav nav-tabs">
-                <li><a href="#tours" data-toggle="tab" class="active show">Tours</a></li>
+                <li><a href="{{route('tour.index')}}" data-toggle="tab" class="active show">Tours</a></li>
                 <li><a href="#hotels" data-toggle="tab">Hotels</a></li>
                 <li><a href="#cars" data-toggle="tab">Vehicles</a></li>
             </ul>

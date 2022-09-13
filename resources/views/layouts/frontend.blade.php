@@ -52,24 +52,24 @@
                     <a href="#" class="open_close" id="close_in"><i class="icon_set_1_icon-77"></i></a>
                     <ul>
                         <li class="submenu">
-                            <a href="index.html" class="show-submenu">Home</a>
+                            <a href="{{ route("home") }}" class="show-submenu">Home</a>
 
                         </li>
                         <li class="submenu">
-                            <a href="all_tours_list.html" class="show-submenu">Tours</a>
+                            <a href="{{ url("/tour") }}" class="show-submenu">Tours</a>
                         </li>
                         <li class="submenu">
-                            <a href="all_hotels_list.html" class="show-submenu">Hotels </a>
+                            <a href="{{ url("/hotel") }}" class="show-submenu">Hotels </a>
                         </li>
                         <li class="submenu">
-                            <a href="all_cars_list.html" class="show-submenu">Vehicles </a>
+                            <a href="{{ url("/vehicle") }}" class="show-submenu">Vehicles </a>
                         </li>
                         <li class="submenu">
-                            <a href="about.html" class="show-submenu">About</a>
+                            <a href="{{ url("/about") }}" class="show-submenu">About</a>
 
                         </li>
                         <li class="submenu">
-                            <a href="blog.html" class="show-submenu">Blog</a>
+                            <a href="{{ url("/blog") }}" class="show-submenu">Blog</a>
 
                         </li>
                     </ul>

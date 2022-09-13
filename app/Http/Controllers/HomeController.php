@@ -34,30 +34,30 @@ class HomeController extends Controller
         //Recommender Initialization
 
 
-        $tours = Tour::with('user')->where('status','=',Status::Active)
-            ->orderBy('created_at','desc');
+        $tours = Tour::with('user')->where('status', '=', Status::Active)
+            ->orderBy('created_at', 'desc');
         $tours_count = count($tours->get());
         $tours = $tours->limit(6)->get();
 
-        $hotels = Hotel::with('user')->where('status','=',Status::Active)
-            ->orderBy('created_at','desc');
+        $hotels = Hotel::with('user')->where('status', '=', Status::Active)
+            ->orderBy('created_at', 'desc');
         $hotels_count = count($hotels->get());
         $hotels = $hotels->limit(6)->get();
 
-        $vehicles = Vehicle::with('user')->where('status','=',Status::Active)
-            ->orderBy('created_at','desc');
+        $vehicles = Vehicle::with('user')->where('status', '=', Status::Active)
+            ->orderBy('created_at', 'desc');
         $vehicles_count = count($vehicles->get());
         $vehicles = $vehicles->limit(6)->get();
 
-        $blogs = Blog::with('user')->where('status','=',Status::Active)
-            ->orderBy('created_at','desc');
+        $blogs = Blog::with('user')->where('status', '=', Status::Active)
+            ->orderBy('created_at', 'desc');
 
         $blogs_count = count($blogs->get());
         $blogs = $blogs->limit(6)->get();
 
         $users_count = count(User::all());
 
-        return view('home',compact('tours','blogs','tours_count','blogs_count','users_count','hotels','hotels_count','vehicles','vehicles_count'));
+        return view('home', compact('tours', 'blogs', 'tours_count', 'blogs_count', 'users_count', 'hotels', 'hotels_count', 'vehicles', 'vehicles_count'));
     }
     public function  contactus()
     {
@@ -65,12 +65,18 @@ class HomeController extends Controller
         return view('contactus');
     }
 
+    public function  about()
+    {
+
+        return view('about');
+    }
+
     public function showProfile($username)
     {
         $user = User::find($username);
 
-        $profile = DB::table('user_profile')->where('user_id','=',$user->id)->first();
-        $city = DB::table('city')->where('id','=',$profile->city_id)->first();
-        return view('viewProfile',compact('user','profile','city'));
+        $profile = DB::table('user_profile')->where('user_id', '=', $user->id)->first();
+        $city = DB::table('city')->where('id', '=', $profile->city_id)->first();
+        return view('viewProfile', compact('user', 'profile', 'city'));
     }
 }
