@@ -29,7 +29,9 @@
                 <div class="col-6"><i class="icon-phone"></i><strong>+92 3876475773</strong></div>
                 <div class="col-6">
                     <ul id="top_links">
-                        <li><a href="#sign-in-dialog" id="access_link">Sign in</a></li>>
+                        {{-- <li><a href="{{ url("/login") }}" id="access_link">Sign in</a></li>> --}}
+                        <li><a href="{{ url("/login") }}" >Sign in</a></li>>
+
                     </ul>
                 </div>
             </div>
@@ -94,16 +96,16 @@
             <div class="col-md-3">
                 <h3>About</h3>
                 <ul>
-                    <li><a href="about.html">About us</a></li>
+                    <li><a href="{{ route("about") }}">About us</a></li>
                     <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="#sign-in-dialog">Login</a></li>
-                    <li><a href="#sign-in-dialog">Register</a></li>
+                    <li><a href="{{ route("login") }}">Login</a></li>
+                    <li><a href="{{ route("register") }}">Register</a></li>
                 </ul>
             </div>
             <div class="col-md-3">
                 <h3>Discover</h3>
                 <ul>
-                    <li><a href="#">Community blog</a></li>
+                    <li><a href="{{ url("blog") }}">Community blog</a></li>
                     <li><a href="#">Tour guide</a></li>
                     <li><a href="#">Wishlist</a></li>
                     <li><a href="#">Gallery</a></li>
@@ -132,13 +134,13 @@
             <div class="col-md-12">
                 <div id="social_footer">
                     <ul>
-                        <li><a href="#"><i class="icon-facebook"></i></a></li>
-                        <li><a href="#"><i class="icon-twitter"></i></a></li>
-                        <li><a href="#"><i class="icon-google"></i></a></li>
-                        <li><a href="#"><i class="icon-instagram"></i></a></li>
-                        <li><a href="#"><i class="icon-pinterest"></i></a></li>
-                        <li><a href="#"><i class="icon-vimeo"></i></a></li>
-                        <li><a href="#"><i class="icon-youtube-play"></i></a></li>
+                        <li><a href="{{ url("//www.facebook.com") }}"><i class="icon-facebook"></i></a></li>
+                        <li><a href="{{ url("//www.twitter.com") }}"><i class="icon-twitter"></i></a></li>
+                        <li><a href="{{ url("//www.google.com") }}"><i class="icon-google"></i></a></li>
+                        <li><a href="{{ url("//www.instagram.com") }}"><i class="icon-instagram"></i></a></li>
+                        <li><a href="{{ url("//www.pinterest.com") }}"><i class="icon-pinterest"></i></a></li>
+                        <li><a href="{{ url("//www.vimeo.com") }}"><i class="icon-vimeo"></i></a></li>
+                        <li><a href="{{ url("//www.youtube.com") }}"><i class="icon-youtube-play"></i></a></li>
                     </ul>
                     <p>© TOURING PROJECT  2022</p>
                 </div>
