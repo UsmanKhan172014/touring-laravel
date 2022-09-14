@@ -160,9 +160,9 @@ class BlogController extends Controller
     public function show($blog)
     {
         $blog = Blog::with(['user.profile','comments.user.profile','comments.replies.user.profile'])->where('slug', $blog)->first();
-        
+
         abort_if($blog == null,'404');
-        
+
         if(Auth::check())
         {
             if($blog->user_id == auth()->user()->id or Gate::allows('isAdmin')){
@@ -172,7 +172,7 @@ class BlogController extends Controller
         if($blog->status != Status::Active){
             abort('404');
         }
-        
+
 
         return view('blog.show',compact('blog'));
     }

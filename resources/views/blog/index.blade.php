@@ -169,7 +169,7 @@
                     <div class="box_style_1">
                         @foreach($blogs as $blog)
                         <div class="post">
-                            <a href="blog_post.html" title="{{ $blog->slug }}"><img src="{{asset('storage/'.$blog->user->username.'/blog/'.$blog->thumbnail)}}" alt="Image" class="img-fluid">
+                            <a href="#" title="{{ $blog->slug }}"><img src="{{asset('storage/'.$blog->user->username.'/blog/'.$blog->thumbnail)}}" alt="Image" class="img-fluid">
                             </a>
                             <div class="post_info clearfix clearfix1">
                                 <div class="post-left">
@@ -186,12 +186,9 @@
                                 </div>
 
                             </div>
-                            <h2>Duis aute irure dolor in reprehenderit</h2>
+                            <h2>{{ $blog->title }}</h2>
                             <p>
-                                Ludus albucius adversarium eam eu. Sit eu reque tation aliquip. Quo no dolorum albucius lucilius, hinc eligendi ut sed. Ex nam quot ferri suscipit, mea ne legere alterum repudiandae. Ei pri quaerendum intellegebat, ut vel consequuntur voluptatibus. Et volumus sententiae adversarium duo......
-                            </p>
-                            <p>
-                                Ludus albucius adversarium eam eu. Sit eu reque tation aliquip. Quo no dolorum albucius lucilius, hinc eligendi ut sed. Ex nam quot ferri suscipit, mea ne legere alterum repudiandae. Ei pri quaerendum intellegebat, ut vel consequuntur voluptatibus. Et volumus sententiae adversarium duo......
+                                {!! Str::limit($blog->body,150) !!}
                             </p>
                             <a href="blog_post.html" class="btn_1" title="blog_post.html">Read more</a>
                         </div>
@@ -204,26 +201,27 @@
                     <!-- end box style -->
                     <hr>
 
-                    <nav aria-label="Page navigation">
-                        <ul class="pagination justify-content-center">
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Previous">
-                                    <span aria-hidden="true">&laquo;</span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                            </li>
-                            <li class="page-item active"><span class="page-link">1<span class="sr-only">(current)</span></span>
-                            </li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Next">
-                                    <span aria-hidden="true">&raquo;</span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
+                    {{ $blogs->links('vendor.pagination.bootstrap-4') }}
+{{--                    <nav aria-label="Page navigation">--}}
+{{--                        <ul class="pagination justify-content-center">--}}
+{{--                            <li class="page-item">--}}
+{{--                                <a class="page-link" href="#" aria-label="Previous">--}}
+{{--                                    <span aria-hidden="true">&laquo;</span>--}}
+{{--                                    <span class="sr-only">Previous</span>--}}
+{{--                                </a>--}}
+{{--                            </li>--}}
+{{--                            <li class="page-item active"><span class="page-link">1<span class="sr-only">(current)</span></span>--}}
+{{--                            </li>--}}
+{{--                            <li class="page-item"><a class="page-link" href="#">2</a></li>--}}
+{{--                            <li class="page-item"><a class="page-link" href="#">3</a></li>--}}
+{{--                            <li class="page-item">--}}
+{{--                                <a class="page-link" href="#" aria-label="Next">--}}
+{{--                                    <span aria-hidden="true">&raquo;</span>--}}
+{{--                                    <span class="sr-only">Next</span>--}}
+{{--                                </a>--}}
+{{--                            </li>--}}
+{{--                        </ul>--}}
+{{--                    </nav>--}}
                     <!-- end pagination-->
 
                 </div>
