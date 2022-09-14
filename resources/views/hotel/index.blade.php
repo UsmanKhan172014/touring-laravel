@@ -222,8 +222,14 @@
                     </div>
                     <!--End tools -->
 
+
+
+
                     <div class="strip_all_tour_list wow fadeIn" data-wow-delay="0.1s">
                         <div class="row">
+
+                            @if(count($hotels) > 0)
+                            @foreach($hotels  as $hotel)
                             <div class="col-lg-4 col-md-4">
                                 <div class="ribbon_3 popular"><span>Popular</span>
                                 </div>
@@ -231,7 +237,7 @@
                                     <a class="tooltip_flip tooltip-effect-1" href="javascript:void(0);">+<span class="tooltip-content-flip"><span class="tooltip-back">Add to wishlist</span></span></a>
                                 </div>
                                 <div class="img_list">
-                                    <a href="single_hotel.html"><img src="img/hotel_1.jpg" alt="Image">
+                                    <a href="single_hotel.html"><img src="{{asset('storage/'.$hotel->user->username.'/hotel/'.$hotel->thumbnail)}}" alt="Image">
                                         <div class="short_info"></div>
                                     </a>
                                 </div>
@@ -242,8 +248,8 @@
                                     </div>
                                     <div class="rating"><i class="icon-star voted"></i><i class="icon-star  voted"></i><i class="icon-star  voted"></i><i class="icon-star  voted"></i><i class="icon-star-empty"></i>
                                     </div>
-                                    <h3><strong>Park Hyatt</strong> Hotel</h3>
-                                    <p>you can now book the best 100 handpicked hotels.</p>
+                                    <h3><strong> {{$hotel->name}} </strong> Hotel</h3>
+                                    <p>{{$hotel->description}}</p>
                                     <ul class="add_info">
                                         <li>
                                             <a href="javascript:void(0);" class="tooltip-1" data-placement="top" title="Free Wifi"><i class="icon_set_1_icon-86"></i></a>
@@ -264,16 +270,25 @@
                                 </div>
                             </div>
                             <div class="col-lg-2 col-md-2">
-                                <div class="price_list">
+                                {{-- <div class="price_list">
                                     <div>1500*<span class="normal_price_list">2500</span><small>*From/Per night</small>
                                         <p><a href="single_hotel.html" class="btn_1">Details</a>
                                         </p>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
+
+                            @endforeach
+                            @else
+                           <div> No Hotels Found </div>
+                            @endif
                         </div>
                     </div>
+
+
                     <!--End strip -->
+{{--
+                    @foreach($hotels  as $hotel)
 
                     <div class="strip_all_tour_list wow fadeIn" data-wow-delay="0.1s">
                         <div class="row">
@@ -331,6 +346,7 @@
 
 
                     <hr>
+                    @endforeach --}}
 
                 </div>
                 <!-- End col lg-9 -->

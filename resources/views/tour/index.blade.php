@@ -179,6 +179,8 @@
 
                     <div class="strip_all_tour_list wow fadeIn" data-wow-delay="0.2s">
                         <div class="row">
+                            @if(count($tours) > 0)
+                            @foreach($tours as $tour)
                             <div class="col-lg-4 col-md-4">
                                 <div class="ribbon_3 popular"><span>Popular</span>
                                 </div>
@@ -186,7 +188,7 @@
                                     <a class="tooltip_flip tooltip-effect-1" href="javascript:void(0);">+<span class="tooltip-content-flip"><span class="tooltip-back">Add to wishlist</span></span></a>
                                 </div>
                                 <div class="img_list">
-                                    <a href="single_tour.html"><img src="img/tour_box_2.jpg" alt="Image">
+                                    <a href="single_tour.html"><img src="{{asset('storage/'.$tour->user->username.'/tour/'.$tour->thumbnail)}}" alt="Image">
                                         <div class="short_info"><i class="icon_set_1_icon-44"></i>Churches</div>
                                     </a>
                                 </div>
@@ -195,8 +197,11 @@
                                 <div class="tour_list_desc">
                                     <div class="rating"><i class="icon-smile voted"></i><i class="icon-smile  voted"></i><i class="icon-smile  voted"></i><i class="icon-smile  voted"></i><i class="icon-smile"></i><small>(75)</small>
                                     </div>
-                                    <h3><strong>Notredame</strong> tour</h3>
-                                    <p>There are several reasons which clearly show the Importance of Pakistan Northern Areas as Tourists come across from all over the world. There are some following reasons why Trip to Pakistan in your Holidays</p>
+                                    <h3><strong>{{$tour->name}}</strong> tour</h3>
+                                    <p>
+                                        {!! Str::limit($tour->description,150) !!}
+
+                                    </p>
                                     <ul class="add_info">
                                         <li>
                                             <div class="tooltip_styled tooltip-effect-4">
@@ -241,19 +246,24 @@
                             </div>
                             <div class="col-lg-2 col-md-2">
                                 <div class="price_list">
-                                    <div><sup></sup>2500<span class="normal_price_list">3500</span><small>*Per person</small>
+                                    <div><sup></sup>{{ $tour->price }}<span class="normal_price_list"></span><small>*Per person</small>
                                         <p><a href="single_tour.html" class="btn_1">Details</a>
                                         </p>
                                     </div>
 
                                 </div>
                             </div>
+
+                            @endforeach
+                            @else
+                            No Tours Found
+                            @endif
                         </div>
                     </div>
                     <!--End strip -->
 
 
-                    <div class="strip_all_tour_list wow fadeIn" data-wow-delay="0.4s">
+                    {{-- <div class="strip_all_tour_list wow fadeIn" data-wow-delay="0.4s">
                         <div class="row">
                             <div class="col-lg-4 col-md-4">
                                 <div class="ribbon_3"><span>Top rated</span>
@@ -325,7 +335,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                     <!--End strip -->
 
 
